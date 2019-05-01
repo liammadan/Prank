@@ -1,0 +1,90 @@
+
+/**
+ * This class will display if Jim succesfully Pranks Dwight
+ *
+ * @LMADAN
+ * @5/1
+ */
+public class Prank
+{
+    private boolean isMad, callsMichael;
+    private String name;
+    
+    public Prank()//within the consturor all instance variables are set
+    {
+       name= "American Standard" ;
+       isMad = true;
+       callsMichael = true;
+    }
+    
+    public Prank(String n, boolean m, boolean c)
+    {
+        name = n;
+        isMad = m;
+        callsMichael = c;
+    }
+    
+    
+    
+    public String getName()
+    {
+        return name;
+    }
+    
+    public boolean getIsMad()
+    {
+        return isMad;
+    }
+     
+    public boolean getCallsMichael()
+    {
+        return callsMichael;
+    }
+    
+    
+    
+    public String toString()
+    {
+      return "The name of this prank is "  +  name + "and the goal is to get Dwight mad and call Michael"; 
+        
+    }
+    
+    int angerLevel = (int) (Math.random() * 10 + 1);
+    public void prank()
+    {
+       if(angerLevel > 3)
+       {
+           isMad = true;
+       }
+       else
+       {
+           isMad = false;
+       }
+        
+       
+       if(isMad)
+       {
+           System.out.println("The prank was a success! Dwight got embaressed");
+       }
+       else
+       {
+           System.out.println("Somehow, The prank failed! Dwight didn't get mad ");
+       }
+    }
+    
+    public void use()
+    {
+        double useSize = Math.random() * 4.0;
+        angerLevel += useSize;
+        
+        if(angerLevel > 5)
+        {
+            System.out.println("Well done! He's pissed");
+            
+        }
+        else
+        {
+            System.out.println("Looks like he isn't mad, you failed");
+        }
+    }
+}
